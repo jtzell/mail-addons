@@ -2,7 +2,7 @@ import logging
 
 import requests
 
-from odoo import api, models
+from flectra import api, models
 
 try:
     import simplejson as json

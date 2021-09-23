@@ -5,7 +5,7 @@
 Installation
 ============
 
-* `Install <https://odoo-development.readthedocs.io/en/latest/odoo/usage/install-module.html>`__ this module in a usual way
+* `Install <https://flectra-development.readthedocs.io/en/latest/flectra/usage/install-module.html>`__ this module in a usual way
 
 Configuration
 =============
@@ -14,7 +14,7 @@ Mailgun-side
 ------------
 
 * register or log in http://mailgun.com
-* Open menu ``[[ Domains ]]`` and click on your domain, e.g. ``sandbox123*****.mailgun.org`` domain. Here you can see all the information needed to configure odoo outgoing mail feature
+* Open menu ``[[ Domains ]]`` and click on your domain, e.g. ``sandbox123*****.mailgun.org`` domain. Here you can see all the information needed to configure flectra outgoing mail feature
 * Please note that state of your domain should be ``Active`` before you can use it. If it is ``Unverified``, verify it first using Mailgun FAQ - `How do I verify my domain <https://help.mailgun.com/hc/en-us/articles/202052074-How-do-I-verify-my-domain->`__
 * if you are using your sandbox domain, add Authorized Recipient first (Sandbox domains are restricted to `authorized recipients <https://help.mailgun.com/hc/en-us/articles/217531258>`__ only)
 * create new Route
@@ -24,12 +24,12 @@ Mailgun-side
 
     * **Expression Type** - ``Custom``
     * **Raw Expression** - ``match_recipient('.*@<your mail domain>')``
-    * **Actions** - ``Store and notify``, ``http://<your odoo domain>/mailgun/notify``
+    * **Actions** - ``Store and notify``, ``http://<your flectra domain>/mailgun/notify``
 
-Odoo-side
+Flectra-side
 ---------
 
-* `Activate Developer Mode <https://odoo-development.readthedocs.io/en/latest/odoo/usage/debug-mode.html>`__
+* `Activate Developer Mode <https://flectra-development.readthedocs.io/en/latest/flectra/usage/debug-mode.html>`__
 * Configure **Outgoung mail server**
 
   * Open menu ``[[ Settings ]] >> Technical >> Email >> Outgoing Mail Servers``
@@ -89,5 +89,5 @@ Incoming
 --------
 
 * Create new message from your mail client to e.g. ``admin@<you mailgun domain>``
-* Open menu ``[[ Discuss ]]`` in Odoo
+* Open menu ``[[ Discuss ]]`` in Flectra
 * RESULT: See your message there

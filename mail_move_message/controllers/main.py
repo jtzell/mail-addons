@@ -3,9 +3,9 @@
 # Copyright 2018 Kolushov Alexandr <https://it-projects.info/team/KolushovAlexandr>
 # License MIT (https://opensource.org/licenses/MIT).
 
-from odoo.http import request
+from flectra.http import request
 
-from odoo.addons.bus.controllers.main import BusController
+from flectra.addons.bus.controllers.main import BusController
 
 
 class MailChatController(BusController):

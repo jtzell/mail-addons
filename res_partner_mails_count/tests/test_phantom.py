@@ -1,15 +1,15 @@
-import odoo.tests
+import flectra.tests
 
 
-@odoo.tests.common.at_install(False)
-@odoo.tests.common.post_install(True)
-class TestUi(odoo.tests.HttpCase):
+@flectra.tests.common.at_install(False)
+@flectra.tests.common.post_install(True)
+class TestUi(flectra.tests.HttpCase):
     def test_01_res_partner_mails_to_count(self):
         # self.phantom_js('/',  "openerp.Tour.run('mails_count_tour', 'test')", "openerp.Tour.tours.mails_count_tour", login="admin")
         self.phantom_js(
             "/",
-            "odoo.__DEBUG__.services['web.Tour'].run('mails_count_tour', 'test')",
-            "odoo.__DEBUG__.services['web.Tour'].tours.mails_count_tour",
+            "flectra.__DEBUG__.services['web.Tour'].run('mails_count_tour', 'test')",
+            "flectra.__DEBUG__.services['web.Tour'].tours.mails_count_tour",
             login="admin",
         )
 
@@ -25,6 +25,6 @@ class TestUi(odoo.tests.HttpCase):
         self.phantom_js(
             link,
             code,
-            "odoo.__DEBUG__.services['web.Tour'].tours.mails_count_tour",
+            "flectra.__DEBUG__.services['web.Tour'].tours.mails_count_tour",
             login="admin",
         )

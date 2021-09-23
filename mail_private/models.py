@@ -3,7 +3,7 @@
 # Copyright 2018 Ivan Yelizariev <https://it-projects.info/team/yelizariev>
 # Copyright 2019 Artem Rafailov <https://it-projects.info/team/Ommo73/>
 # License MIT (https://opensource.org/licenses/MIT).
-from odoo import fields, models
+from flectra import fields, models
 
 
 class MailComposeMessage(models.TransientModel):
@@ -63,5 +63,6 @@ class MailMessage(models.Model):
         return result
 
     def get_internal_users_ids(self):
-        internal_users_ids = self.env["res.users"].search([("share", "=", False)]).ids
+        internal_users_ids = self.env["res.users"].search(
+            [("share", "=", False)]).ids
         return internal_users_ids

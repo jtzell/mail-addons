@@ -5,9 +5,9 @@
 # Copyright 2018 Kolushov Alexandr <https://it-projects.info/team/KolushovAlexandr>
 # License MIT (https://opensource.org/licenses/MIT).
 
-from odoo import api, exceptions, fields, models
-from odoo.tools import email_split
-from odoo.tools.translate import _
+from flectra import api, exceptions, fields, models
+from flectra.tools import email_split
+from flectra.tools.translate import _
 
 
 class Wizard(models.TransientModel):
@@ -43,7 +43,8 @@ class Wizard(models.TransientModel):
         if len(available_models):
             record = self.env[available_models[0][0]].search([], limit=1)
             res["model_record"] = (
-                len(record) and (available_models[0][0] + "," + str(record.id)) or False
+                len(record) and (
+                    available_models[0][0] + "," + str(record.id)) or False
             )
 
         if "message_id" in res:
@@ -71,7 +72,8 @@ class Wizard(models.TransientModel):
             ]:
                 res["filter_by_partner"] = True
             if message.author_id and res.get("model"):
-                res_id = self.env[res["model"]].search([], order="id desc", limit=1)
+                res_id = self.env[res["model"]].search(
+                    [], order="id desc", limit=1)
                 if res_id:
                     res["res_id"] = res_id[0].id
 
@@ -109,9 +111,11 @@ class Wizard(models.TransientModel):
         string="Is Moved", related="message_id.is_moved", readonly=True
     )
     parent_id = fields.Many2one("mail.message", string="Search by name",)
-    model_record = fields.Reference(selection="_model_selection", string="Record")
+    model_record = fields.Reference(
+        selection="_model_selection", string="Record")
     model = fields.Char(compute="_compute_model_res_id", string="Model")
-    res_id = fields.Integer(compute="_compute_model_res_id", string="Record ID")
+    res_id = fields.Integer(
+        compute="_compute_model_res_id", string="Record ID")
 
     can_move = fields.Boolean("Can move", compute="_compute_get_can_move")
     move_back = fields.Boolean(
@@ -202,7 +206,8 @@ class Wizard(models.TransientModel):
                     contact_field = n
                     break
             if contact_field:
-                domain["res_id"].append((contact_field, "=", self.partner_id.id))
+                domain["res_id"].append(
+                    (contact_field, "=", self.partner_id.id))
         if self.model:
             res_id = self.env[self.model].search(
                 domain["res_id"], order="id desc", limit=1
@@ -355,7 +360,8 @@ class MailMessage(models.Model):
         if include_myself:
             ids.append(self.id)
         while True:
-            new_ids = self.search([("parent_id", "in", ids), ("id", "not in", ids)]).ids
+            new_ids = self.search(
+                [("parent_id", "in", ids), ("id", "not in", ids)]).ids
             if new_ids:
                 ids = ids + new_ids
                 continue
@@ -367,7 +373,8 @@ class MailMessage(models.Model):
         fol_obj = self.env["mail.followers"]
         for message in self:
             followers = fol_obj.sudo().search(
-                [("res_model", "=", message.model), ("res_id", "=", message.res_id)]
+                [("res_model", "=", message.model),
+                 ("res_id", "=", message.res_id)]
             )
             for f in followers:
                 self.env[model].browse(ids).message_subscribe(
@@ -473,7 +480,8 @@ class MailMessage(models.Model):
                 r.sudo().move_followers(r_vals.get("model"), r_vals.get("res_id"))
             r.sudo().write(r_vals)
             r.attachment_ids.sudo().write(
-                {"res_id": r_vals.get("res_id"), "res_model": r_vals.get("model")}
+                {"res_id": r_vals.get("res_id"),
+                 "res_model": r_vals.get("model")}
             )
 
         # Send notification
@@ -524,7 +532,8 @@ class MailMoveMessageConfiguration(models.TransientModel):
         config_parameters = self.env["ir.config_parameter"].sudo()
         model_names = config_parameters.sudo().get_param("mail_relocation_models")
         model_names = model_names.split(",")
-        model_ids = self.env["ir.model"].sudo().search([("model", "in", model_names)])
+        model_ids = self.env["ir.model"].sudo().search(
+            [("model", "in", model_names)])
         res.update(
             model_ids=[m.id for m in model_ids],
             move_followers=config_parameters.sudo().get_param(
@@ -538,7 +547,8 @@ class MailMoveMessageConfiguration(models.TransientModel):
         config_parameters = self.env["ir.config_parameter"].sudo()
         for record in self:
             model_names = ",".join([x.model for x in record.model_ids])
-            config_parameters.set_param("mail_relocation_models", model_names or "")
+            config_parameters.set_param(
+                "mail_relocation_models", model_names or "")
             config_parameters.set_param(
                 "mail_relocation_move_followers", record.move_followers or ""
             )

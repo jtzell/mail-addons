@@ -19,7 +19,7 @@
 ##############################################################################
 # noinspection PyUnresolvedReferences
 from . import models
-from odoo import SUPERUSER_ID, api
+from flectra import SUPERUSER_ID, api
 
 
 def set_catchall_alias(cr, registry):

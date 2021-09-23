@@ -1,7 +1,7 @@
 import datetime
 
-from odoo import api, exceptions, fields, models, tools
-from odoo.tools.translate import _
+from flectra import api, exceptions, fields, models, tools
+from flectra.tools.translate import _
 
 
 class FetchMailServer(models.Model):
@@ -77,4 +77,5 @@ class FetchMailImmediately(models.AbstractModel):
         fetchmail_model = self.env["fetchmail.server"].sudo()
 
         fetchmail_task._try_lock()
-        fetchmail_model.with_context(run_fetchmail_manually=True)._fetch_mails()
+        fetchmail_model.with_context(
+            run_fetchmail_manually=True)._fetch_mails()

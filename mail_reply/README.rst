@@ -6,7 +6,7 @@
  Always show reply button
 ==========================
 
-The module allows to reply to any message. Out-of-box odoo shows reply button for messages attached to some record.
+The module allows to reply to any message. Out-of-box flectra shows reply button for messages attached to some record.
 
 Questions?
 ==========
@@ -19,7 +19,7 @@ Contributors
 
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/11.0/mail_reply/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/11.0/mail_reply/
 
 
-Tested on `Odoo 11.0 <https://github.com/odoo/odoo/commit/ecbf7aa4714479229658d14cce28fa00376ed390>`_
+Tested on `Flectra 11.0 <https://github.com/flectra/flectra/commit/ecbf7aa4714479229658d14cce28fa00376ed390>`_

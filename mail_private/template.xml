@@ -2,7 +2,7 @@
 <!--Copyright 2016 x620 <https://github.com/x620>
     Copyright 2019 Artem Rafailov <https://it-projects.info/team/Ommo73/>
     License MIT (https://opensource.org/licenses/MIT).-->
-<odoo>
+<flectra>
     <template
         id="assets_backend"
         name="mail_private_assets_backend"
@@ -19,4 +19,4 @@
             />
         </xpath>
     </template>
-</odoo>
+</flectra>

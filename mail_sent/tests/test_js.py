@@ -1,11 +1,11 @@
 from werkzeug import url_encode
 
-import odoo.tests
+import flectra.tests
 
 
-@odoo.tests.common.at_install(True)
-@odoo.tests.common.post_install(True)
-class TestUi(odoo.tests.HttpCase):
+@flectra.tests.common.at_install(True)
+@flectra.tests.common.post_install(True)
+class TestUi(flectra.tests.HttpCase):
     def test_01_mail_sent(self):
         # wait till page loaded and then click and wait again
 
@@ -27,6 +27,6 @@ class TestUi(odoo.tests.HttpCase):
         self.phantom_js(
             link,
             code,
-            "odoo.__DEBUG__.services['web_tour.tour'].tours.mail_tour.ready",
+            "flectra.__DEBUG__.services['web_tour.tour'].tours.mail_tour.ready",
             login="demo",
         )

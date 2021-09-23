@@ -20,7 +20,7 @@ Contributors
 
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/13.0/mail_sent/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/13.0/mail_sent/
 
 
-Tested on `Odoo 12.0 <https://github.com/odoo/odoo/commit/c423e5fe047a66517a60b68874e18dc5c3697787>`_
+Tested on `Flectra 12.0 <https://github.com/flectra/flectra/commit/c423e5fe047a66517a60b68874e18dc5c3697787>`_

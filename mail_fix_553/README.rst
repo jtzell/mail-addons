@@ -10,8 +10,8 @@ Module updates 'FROM' field to portal@MYDOMAIN.COM  value in order to fix 553 er
 E.g:
 
 * Customer send email from USER@CUSTOMER.com to info@MYDOMAIN.COM
-* odoo accept email and try to send notifcation to related odoo users. E.g to admin@gmail.com.
-* By default odoo prepare notification email with parameters as follows:
+* flectra accept email and try to send notifcation to related flectra users. E.g to admin@gmail.com.
+* By default flectra prepare notification email with parameters as follows:
 
   * FROM: user@CUSTOMER.com
   * TO: admin@gmail.com
@@ -34,15 +34,15 @@ model. So it is just copy pasted source code with some
 modification. This function is changed very rarely, but sometime it
 can happens and the module should be updated. You can check commits
 for mail_mail.py here:
-https://github.com/odoo/odoo/commits/8.0/addons/mail/mail_mail.py
+https://github.com/flectra/flectra/commits/8.0/addons/mail/mail_mail.py
 
-Tested on `Odoo 8.0 <https://github.com/odoo/odoo/commit/d023c079ed86468436f25da613bf486a4a17d625>`_
+Tested on `Flectra 8.0 <https://github.com/flectra/flectra/commit/d023c079ed86468436f25da613bf486a4a17d625>`_
 
 Status
 ======
 
-Related issues at odoo's tracker: 
-* https://github.com/odoo/odoo/issues/5864
-* https://github.com/odoo/odoo/issues/3347
+Related issues at flectra's tracker: 
+* https://github.com/flectra/flectra/issues/5864
+* https://github.com/flectra/flectra/issues/3347
 
-Fix: https://github.com/odoo-dev/odoo/commit/a4597fe34fcfa8dae28b156410080346bb33af33
+Fix: https://github.com/flectra-dev/flectra/commit/a4597fe34fcfa8dae28b156410080346bb33af33

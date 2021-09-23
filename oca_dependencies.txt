@@ -1,4 +1,4 @@
-OCA_web https://github.com/it-projects-llc/web.git
-access-addons https://github.com/it-projects-llc/access-addons.git
-misc-addons https://github.com/it-projects-llc/misc-addons
-website-addons https://github.com/it-projects-llc/website-addons
+FCA_web https://gitlab.com/flectra-community/web.git
+access-addons https://github.com/itpp-labs/access-addons.git
+misc-addons https://github.com/itpp-labs/misc-addons
+website-addons https://github.com/itpp-labs/website-addons

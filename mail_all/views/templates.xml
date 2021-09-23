@@ -3,7 +3,7 @@
     # Copyright 2018 Artyom Losev <https://it-projects.info/team/ArtyomLosev>
     # Copyright 2018 Kolushov Alexandr <https://it-projects.info/team/KolushovAlexandr>
     # License MIT (https://opensource.org/licenses/MIT). -->
-<odoo>
+<flectra>
     <template
         id="mail_all_assets_backend"
         name="mail_all_assets_backend"
@@ -18,4 +18,4 @@
             />
         </xpath>
     </template>
-</odoo>
+</flectra>

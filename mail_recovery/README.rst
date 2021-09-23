@@ -25,7 +25,7 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/9.0/mail_recovery/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/9.0/mail_recovery/
 
 
-Tested on `Odoo 9.0 <https://github.com/odoo/odoo/commit/fd9eb2e4819031c6758c021f4c335b591367632d>`_
+Tested on `Flectra 9.0 <https://github.com/flectra/flectra/commit/fd9eb2e4819031c6758c021f4c335b591367632d>`_

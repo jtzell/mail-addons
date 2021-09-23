@@ -3,7 +3,7 @@
     # Copyright 2016 Ivan Yelizariev <https://it-projects.info/team/yelizariev>
     # Copyright 2018 Kolushov Alexandr <https://it-projects.info/team/KolushovAlexandr>
     # License MIT (https://opensource.org/licenses/MIT).-->
-<odoo>
+<flectra>
     <template
         id="assets_backend"
         name="custom bar assets"
@@ -177,4 +177,4 @@
         <field name="target">inline</field>
         <field name="context">{'module' : 'mail_move_message'}</field>
     </record>
-</odoo>
+</flectra>

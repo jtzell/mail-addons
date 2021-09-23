@@ -4,12 +4,12 @@ import logging
 import re
 from email.utils import formataddr
 
-from odoo import SUPERUSER_ID, tools
-from odoo.osv import osv
-from odoo.tools.safe_eval import safe_eval
-from odoo.tools.translate import _
+from flectra import SUPERUSER_ID, tools
+from flectra.osv import osv
+from flectra.tools.safe_eval import safe_eval
+from flectra.tools.translate import _
 
-from odoo.addons.base.ir.ir_mail_server import MailDeliveryException
+from flectra.addons.base.ir.ir_mail_server import MailDeliveryException
 
 _logger = logging.getLogger(__name__)
 
@@ -75,7 +75,8 @@ class MailMail(osv.Model):
                 attachments = [
                     (a["datas_fname"], base64.b64decode(a["datas"]))
                     for a in ir_attachment.read(
-                        cr, SUPERUSER_ID, attachment_ids, ["datas_fname", "datas"]
+                        cr, SUPERUSER_ID, attachment_ids, [
+                            "datas_fname", "datas"]
                     )
                 ]
 
@@ -83,7 +84,8 @@ class MailMail(osv.Model):
                 email_list = []
                 if mail.email_to:
                     email_list.append(
-                        self.send_get_email_dict(cr, uid, mail, context=context)
+                        self.send_get_email_dict(
+                            cr, uid, mail, context=context)
                     )
                 for partner in mail.recipient_ids:
                     email_list.append(
@@ -135,7 +137,8 @@ class MailMail(osv.Model):
                     if re.search(correct_email_from, email_from) is None:
                         email_from = default_email_from
                     if catchall_alias_name:
-                        email_from = formataddr((catchall_alias_name, email_from))
+                        email_from = formataddr(
+                            (catchall_alias_name, email_from))
 
                     msg = ir_mail_server.build_email(
                         email_from=email_from,  # NEW STUFF
@@ -211,7 +214,8 @@ class MailMail(osv.Model):
                         # get the args of the original error, wrap into a value and throw a MailDeliveryException
                         # that is an except_orm, with name and value as arguments
                         value = ". ".join(e.args)
-                        raise MailDeliveryException(_("Mail Delivery Failed"), value)
+                        raise MailDeliveryException(
+                            _("Mail Delivery Failed"), value)
                     raise
 
             if auto_commit is True:

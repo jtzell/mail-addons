@@ -4,11 +4,11 @@ from email.message import EmailMessage
 
 import mock
 
-import odoo
-from odoo import SUPERUSER_ID
-from odoo.tests import TransactionCase
+import flectra
+from flectra import SUPERUSER_ID
+from flectra.tests import TransactionCase
 
-from odoo.addons.base.models.ir_mail_server import IrMailServer
+from flectra.addons.base.models.ir_mail_server import IrMailServer
 
 from ..models.mail import (
     MESSAGE_PREFIX,
@@ -18,7 +18,7 @@ from ..models.mail import (
 )
 
 
-@odoo.tests.tagged("post_install", "-at_install")
+@flectra.tests.tagged("post_install", "-at_install")
 class TestEmail(TransactionCase):
     def setUp(self):
         super(TestEmail, self).setUp()
@@ -44,7 +44,7 @@ class TestEmail(TransactionCase):
                 "smtp_pass": "exist",
                 "reply_to_method": "msg_id",
                 "force_email_reply_to_domain": "example.com",
-                "force_email_from": "odoo@example.com",
+                "force_email_from": "flectra@example.com",
             }
         )
 
@@ -157,7 +157,7 @@ class TestEmail(TransactionCase):
     def test_reply_to_method_msg_id_priority(self):
         """
         In this test we will inject the wrong Message-Id to the incoming
-        email messages References-header and see if Odoo will prioritize
+        email messages References-header and see if Flectra will prioritize
         the custom Reply-To address over the References-header. It should.
         :return:
         """
@@ -247,7 +247,7 @@ class TestEmail(TransactionCase):
         )
 
     def test_reply_to_method_msg_id_legacy(self):
-        # REMOVE this test when porting to Odoo 14
+        # REMOVE this test when porting to Flectra 14
 
         # Make administrator follow the partner
         self.partner2.message_subscribe([self.env.user.partner_id.id])

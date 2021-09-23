@@ -1,4 +1,4 @@
-from odoo import models
+from flectra import models
 
 
 class Partner(models.Model):
@@ -15,5 +15,6 @@ class Partner(models.Model):
                     ("model", "=", "res.partner"),
                     ("res_id", "in", [partner.id] + partner.child_ids.ids),
                 ]
-                vals["message_ids"] = self.env["mail.message"].search(domain).ids
+                vals["message_ids"] = self.env["mail.message"].search(
+                    domain).ids
         return res

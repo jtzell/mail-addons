@@ -4,8 +4,8 @@
 
 Mail-related stuff for multi-website support
 
-Module is available at Odoo Apps Store:
-https://www.odoo.com/apps/modules/13.0/mail_multi_website/
+Module is available at Flectra Apps Store:
+https://www.flectra.com/apps/modules/13.0/mail_multi_website/
 
     We do love FOSS, but sometimes we need to eat ¯\\_(ツ)_/¯
 

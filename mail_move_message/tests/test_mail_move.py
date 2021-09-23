@@ -1,13 +1,13 @@
 # Copyright 2018 Kolushov Alexandr <https://it-projects.info/team/KolushovAlexandr>
 # License MIT (https://opensource.org/licenses/MIT).
 
-import odoo.tests
-from odoo.api import Environment
+import flectra.tests
+from flectra.api import Environment
 
 
-@odoo.tests.common.at_install(True)
-@odoo.tests.common.post_install(True)
-class TestUi(odoo.tests.HttpCase):
+@flectra.tests.common.at_install(True)
+@flectra.tests.common.post_install(True)
+class TestUi(flectra.tests.HttpCase):
     def test_create_new_partner_and_move_message(self):
         env = Environment(self.registry.test_cr, self.uid, {})
         # needed because tests are run before the module is marked as

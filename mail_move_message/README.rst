@@ -25,11 +25,11 @@ Contributors
 Further information
 ===================
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/11.0/mail_move_message/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/11.0/mail_move_message/
 
 
-Notifications on updates: `via Atom <https://github.com/it-projects-llc/mail-addons/commits/11.0/mail_move_message.atom>`_, `by Email <https://blogtrottr.com/?subscribe=https://github.com/it-projects-llc/mail-addons/commits/11.0/mail_move_message.atom>`_
+Notifications on updates: `via Atom <https://github.com/itpp-labs/mail-addons/commits/11.0/mail_move_message.atom>`_, `by Email <https://blogtrottr.com/?subscribe=https://github.com/itpp-labs/mail-addons/commits/11.0/mail_move_message.atom>`_
 
-Further information and discussion: http://yelizariev.github.io/odoo/module/2015/04/10/mail-relocation.html
+Further information and discussion: http://yelizariev.github.io/flectra/module/2015/04/10/mail-relocation.html
 
-Tested on `Odoo 11.0 <https://github.com/odoo/odoo/commit/e9454e79e27d0b85546132cbe00b391e974c66bf>`_
+Tested on `Flectra 11.0 <https://github.com/flectra/flectra/commit/e9454e79e27d0b85546132cbe00b391e974c66bf>`_

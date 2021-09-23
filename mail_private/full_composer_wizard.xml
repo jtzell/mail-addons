@@ -2,7 +2,7 @@
 <!--Copyright 2017 Artyom Losev <https://github.com/ArtyomLosev>
     Copyright 2019 Artem Rafailov <https://it-projects.info/team/Ommo73/>
     License MIT (https://opensource.org/licenses/MIT).-->
-<odoo>
+<flectra>
     <record model="ir.ui.view" id="email_compose_message_wizard_form_private">
         <field name="name">mail.compose.message.form.private</field>
         <field name="model">mail.compose.message</field>
@@ -24,4 +24,4 @@
             </data>
         </field>
     </record>
-</odoo>
+</flectra>

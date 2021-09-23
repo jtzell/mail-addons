@@ -15,6 +15,6 @@ You can see Smart buttons "Mails from" and "Mails to" in the contact form in the
 Further information
 -------------------
 
-Odoo Apps Store: https://apps.odoo.com/apps/modules/9.0/res_partner_mails_count/
+Flectra Apps Store: https://apps.flectra.com/apps/modules/9.0/res_partner_mails_count/
 
-Tested on `Odoo 9.0 <https://github.com/odoo/odoo/commit/b9f206953e3f877adf18643f154d1262842564ee>`_
+Tested on `Flectra 9.0 <https://github.com/flectra/flectra/commit/b9f206953e3f877adf18643f154d1262842564ee>`_

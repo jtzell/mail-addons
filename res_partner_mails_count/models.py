@@ -1,4 +1,4 @@
-from odoo import fields, models
+from flectra import fields, models
 
 
 class ResPartner(models.Model):
@@ -17,5 +17,6 @@ class ResPartner(models.Model):
     def _compute_mails_from(self):
         for r in self:
             r.mails_from = (
-                self.env["mail.message"].sudo().search_count([("author_id", "=", r.id)])
+                self.env["mail.message"].sudo().search_count(
+                    [("author_id", "=", r.id)])
             )

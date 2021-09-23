@@ -9,7 +9,7 @@
         <!-- Name for Catchall Email Alias -->
         <record id="icp_mail_catchall_name_alias_from" model="ir.config_parameter">
             <field name="key">mail.catchall.name_alias_from</field>
-            <field name="value">Odoo</field>
+            <field name="value">Flectra</field>
         </record>
     </data>
 </openerp>
